@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence>
+ <persistence-unit name="WebCatDS">
+ <jta-data-source>java:jboss/datasources/WebCatDS</jta-data-source>
+ <class>fr.webcatalog.model.Categorie</class>
+
+ <properties>
+
+   <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+
+   <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
+
+   <property name="hibernate.show_sql" value="true"/>
+
+ </properties>
+ </persistence-unit>
+</persistence>

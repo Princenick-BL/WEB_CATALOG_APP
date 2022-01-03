@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete 4 elements from project &apos;WebCatalogEJB&apos;&#x0A;- Original project: &apos;WebCatalogEJB&apos;&#x0A;- Original elements:&#x0A;     fr.webcatalog.model.Client.java&#x0A;     fr.webcatalog.model.CommandeClient.java&#x0A;     fr.webcatalog.model.Produit.java&#x0A;     fr.webcatalog.model.ProduitCommande.java" description="Delete elements" element1="/ejbModule&lt;fr.webcatalog.model{Produit.java" element2="/ejbModule&lt;fr.webcatalog.model{ProduitCommande.java" element3="/ejbModule&lt;fr.webcatalog.model{CommandeClient.java" element4="/ejbModule&lt;fr.webcatalog.model{Client.java" elements="4" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1641127882244" subPackages="false" version="1.0"/>
+</session>

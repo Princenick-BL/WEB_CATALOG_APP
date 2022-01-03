@@ -1,0 +1,42 @@
+package fr.webcatalog.ejb;
+
+import java.util.List;
+
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+
+import fr.webcatalog.model.Categorie;
+
+/**
+ * Session Bean implementation class AccesCatalogueBean
+ */
+@Stateless
+@LocalBean
+public class AccesCatalogueBean implements AccesCatalogueBeanRemote, AccesCatalogueBeanLocal {
+
+    /**
+     * Default constructor. 
+     */
+    public AccesCatalogueBean() {
+        // TODO Auto-generated constructor stub
+    }
+    @PersistenceContext(unitName="WebCatDS")
+	private EntityManager em;
+	
+	@Override
+	public List<Categorie> getAllCategories() {
+		Query req=em.createQuery("select c from Categorie c");
+		return req.getResultList();
+	}
+
+	@Override
+	public List<Categorie> getAllProduits(int numCat) {
+		Query req=em.createQuery("select p from Produits  where p.categorie_id LIKE :numCat");	
+		req.setParameter("numCat",numCat);
+		return req.getResultList();
+	}
+
+}

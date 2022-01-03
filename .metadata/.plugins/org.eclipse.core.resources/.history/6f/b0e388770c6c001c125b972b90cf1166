@@ -1,0 +1,43 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@page import="java.io.*"%>
+    
+<%@page import="java.util.ArrayList"%>
+<%@page import="fr.webcatalog.model.Produits"%>
+
+<!DOCTYPE html>
+<div class="content">
+	<%
+	    String cat = request.getParameter("cat");
+		if(cat != null){
+		%>
+			<div>
+				<h2><%= cat %></h2>
+				<div class="produits">
+				<% 
+					ArrayList<Produits> produits = null;
+					produits = (ArrayList<Produits>)request.getAttribute("produits");
+					if(produits!=null && produits.size()!=0){
+			        	for(Produits p:produits){%>
+			                <div class="produit">
+			                	<img class="produit_img' src="<%=p.getImage()%>" alt="image"/>
+			                	<div class="produit_footer">
+				                	<a href="categories?cat=<%=p.getNom()%>"><%=p.getNom()%></a>
+				                	
+			                	</div>
+			                </div>
+			            <%}	
+					}
+		       	%>
+				</div>
+			</div>
+		<%
+		}else{
+		%>
+			<div>
+				Choisissez une catégorie
+			</div>
+		<%
+		}
+	%>
+</div>

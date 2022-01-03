@@ -1,0 +1,52 @@
+package fr.webcatalog.model;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity @Table(name = "ProduitCommande")
+public class ProduitCommande {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int quantite;
+	
+    @ManyToOne @JoinColumn(name="produit_id", nullable=false)
+	private Produit produit;
+    
+    @ManyToOne @JoinColumn(name="commande_id", nullable=false)
+   	private CommandeClient commandeClient;
+
+
+
+	public Produit getProduit() {
+		return produit;
+	}
+
+	public void setProduit(Produit produit) {
+		this.produit = produit;
+	}
+
+	public int getQuantite() {
+		return quantite;
+	}
+
+	public void setQuantite(int quantite) {
+		this.quantite = quantite;
+	}
+
+	public CommandeClient getCommandeClient() {
+		return commandeClient;
+	}
+
+	public void setCommandeClient(CommandeClient commandeClient) {
+		this.commandeClient = commandeClient;
+	}
+
+	
+    
+}

@@ -1,0 +1,10 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+	<ul class="siderMenu">
+		<li><a href="#">Acceuil</a></li>
+		<li><a href="#">Acceuil</a></li>
+		<li><a href="#">Acceuil</a></li>
+	</ul>
+</html>

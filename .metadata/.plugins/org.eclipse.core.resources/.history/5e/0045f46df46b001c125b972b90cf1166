@@ -1,0 +1,19 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="fr.webcatalog.model.Categorie"%>
+    
+<!DOCTYPE html>
+<html>
+	<p>Menu</p>
+	<ul class="siderMenu">
+		<% ArrayList<Categorie> categories = (ArrayList<Categorie>)request.getAttribute("data");
+			if(categories.size()!=0){
+	        	for(Categorie c:categories){%>
+	                <li><%=c.getNom()%></li>
+	            <%}
+				
+			}
+       	%>
+	</ul>
+</html>

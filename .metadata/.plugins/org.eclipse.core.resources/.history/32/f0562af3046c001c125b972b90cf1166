@@ -1,0 +1,13 @@
+package fr.webcatalog.ejb;
+
+import java.util.List;
+
+import javax.ejb.Remote;
+
+import fr.webcatalog.model.Categorie;
+
+@Remote
+public interface AccesCatalogueBeanRemote {
+	public List<Categorie> getAllCategories() ;
+	public List<Categorie> getAllProduits(int numCat) ;
+}

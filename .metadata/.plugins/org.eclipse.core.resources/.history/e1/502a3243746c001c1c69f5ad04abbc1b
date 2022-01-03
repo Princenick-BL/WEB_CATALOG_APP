@@ -1,0 +1,15 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<header >
+	<%request.getParameter("pageName");%>
+	<p>MA BOUTIQUE</p>
+	 <nav class="navMenu">
+      <a href="/WebCatalogApp">Acceuil</a>
+      <a href="categories">Catégories</a>
+      <a href="#">Votre Panier</a>
+      <div class="dot"></div>
+    </nav>
+</header>
+</html>

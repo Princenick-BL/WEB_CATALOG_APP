@@ -1,0 +1,13 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<div>
+	<p>Categories</p>
+	<nav class="siderMenu">
+      <a href="#">Acceuil</a>
+      <a href="#">Catégories</a>
+      <a href="#">Votre Panier</a>
+    </nav>
+</div>
+</html>

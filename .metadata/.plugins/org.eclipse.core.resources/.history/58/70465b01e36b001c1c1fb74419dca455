@@ -1,0 +1,60 @@
+package fr.webcatalog.info;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class ControleurServlet
+ */
+@WebServlet("/ControleurServlet")
+public class ControleurServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public ControleurServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stubrequest
+		
+		String requri = request.getRequestURI().substring(request.getContextPath().length()); //get requested url
+		String page = "";
+
+		if(requri.equals("/") || requri.equals("")) {
+			page = "index.jsp";
+			
+		}else if(requri.equals("/categories/") || requri.equals("/categories")) {
+			page = "categories.jsp";
+			
+		}else if(requri.equals("/about/") || requri.equals("/about")) {
+			
+			page = "about.jsp";
+			
+		}
+		System.out.println(page);
+
+		//send requested url to servlet which will then forward user to the appropriate page
+		request.getRequestDispatcher("WebCatalogApp"+"categories.jsp").forward(request, response);
+		return;
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}

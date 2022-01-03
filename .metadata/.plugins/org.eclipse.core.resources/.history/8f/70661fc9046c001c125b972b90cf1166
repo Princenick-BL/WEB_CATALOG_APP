@@ -1,0 +1,13 @@
+package fr.webcatalog.ejb;
+
+import java.util.List;
+
+import javax.ejb.Local;
+
+import fr.webcatalog.model.Categorie;
+
+@Local
+public interface AccesCatalogueBeanLocal {
+	public List<Categorie> getAllCategories() ;
+	public List<Categorie> getAllProduits(int numCat) ;
+}

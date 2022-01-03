@@ -1,0 +1,59 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@page import="java.io.*"%>
+    
+<%@page import="java.util.ArrayList"%>
+<%@page import="fr.webcatalog.model.Produits"%>
+
+<!DOCTYPE html>
+<div class="content">
+	<%
+	    String cat = request.getParameter("cat");
+		if(cat != null){
+		%>
+			<div>
+				<h2><%= cat %></h2>
+				<div class="produits">
+				<% 
+					ArrayList<Produits> produits = null;
+					produits = (ArrayList<Produits>)request.getAttribute("produits");
+					if(produits!=null && produits.size()!=0){
+			        	for(Produits p:produits){%>
+			                <form class="produit">
+			                	<img class="produit_img" src="<%=p.getImage()%>" alt="image"/>
+			                	<div class="produit_footer">
+			                		
+				                	<a href="categories?cat=<%=p.getNom()%>"><%=p.getNom()%></a>
+				                	<br>
+				                	<div class="quantite_zone">
+				                		<label>Quantitée : </label>
+					                	<input type="number" id="quantity" name="quantity" min="1" value = "1">
+				                	</div>
+				                	<input type="submit" id="submit_produit" name="submit_produit" value="Ajouter au panier">
+			                	</div>
+			                </form>
+			            <%}	
+					}
+		       	%>
+				</div>
+			</div>
+		<%
+		}else{
+		%>
+			<div class="center">
+				<h1>Choisissez une catégorie</h1>
+			</div>
+		<%
+		}
+		
+		String cart = request.getParameter("cart");
+
+		%>
+			<div class="cart">
+				<span class="dimiss"><a href="?cat=<%=request.getParameter("cat")%>">x</a></span>
+				<h1>Votre panier</h1>
+			</div>
+		<%
+	%>
+	
+</div>

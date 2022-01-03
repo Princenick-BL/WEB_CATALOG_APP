@@ -1,0 +1,11 @@
+INDEX VERSION 1.4+/home/prince/DEVS/JEE/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+1310756663.index
+1903316580.index
+278279017.index
+790599889.index
+4052385557.index
+69819461.index
+977111709.index
+4052385557.index
+456137231.index
+4107765975.index
